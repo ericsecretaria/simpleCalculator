@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <input type="text" id="expression" name="expression" required><br><br>
+
+      <button type="button" onclick="addInput('1')">1</button>
+      <button type="button" onclick="addInput('2')">2</button>
+      <button type="button" onclick="addInput('3')">3</button>
+      <button type="button" onclick="addInput(' + ')">+</button><br><br>
+
+      <button type="button" onclick="addInput('4')">4</button>
+      <button type="button" onclick="addInput('5')">5</button>
+      <button type="button" onclick="addInput('6')">6</button>
+      <button type="button" onclick="addInput(' - ')">-</button><br><br>
+
+      <button type="button" onclick="addInput('7')">7</button>
+      <button type="button" onclick="addInput('8')">8</button>
+      <button type="button" onclick="addInput('9')">9</button>
+      <button type="button" onclick="addInput(' * ')">*</button><br><br>
+
+      <button type="button" onclick="addInput('.')">.</button>
+      <button type="button" onclick="addInput('0')">0</button>
+      <button type="button" onclick="addInput(' / ')">/</button>
+      <button type="submit" name="submit">=</button>
+      <br><br>
+
+      <button type="button" onclick="clearInput()">Clear</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      // Function to add input to the expression field
+      function addInput(input) {
+        document.getElementById('expression').value += input;
+      }
+
+      // Function to clear the expression field
+      function clearInput() {
+        document.getElementById('expression').value = '';
+      }
+
+      // Function to calculate the result and display it
+      /*
+      function calculate() {
+        const expression = document.getElementById('expression').value;
+
+        // Make a POST request to the server to calculate the result
+        fetch('/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `expression=${encodeURIComponent(expression)}`
+        })
+        .then(response => response.text())
+        .then(result => {
+          document.getElementById('expression').value = result;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }*/
+    </script>
+  </body>
+</html>
